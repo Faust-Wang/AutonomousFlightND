@@ -1,1 +1,1 @@
-../config/07_AttitudeEstimation.txt
+../config/X_TestManyQuads.txt
