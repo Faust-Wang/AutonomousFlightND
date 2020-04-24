@@ -1,6 +1,6 @@
 ## **Project: Estimation**
 
-### **Rubruc 1:** Determine the standard deviation of the measurement noise of both GPS X data and Accelerometer X data. 
+### **Rubric 1:** Determine the standard deviation of the measurement noise of both GPS X data and Accelerometer X data. 
 
 In order to process the measurement noise I took the data from `Graph1.txt` and `Graph2.txt` and extracted the standard 
 deviation using the python code:
