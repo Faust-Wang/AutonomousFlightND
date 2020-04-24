@@ -10,7 +10,7 @@ I have furthered the development of this algorithm by allowing diagonal movement
 
 ### Implementing Your Path Planning Algorithm
 
-#### 1. Set your global home position
+#### **Rubric 1:** Set your global home position
 The global home position is found from the ```colliders.csv``` file:
 
 ```python
@@ -21,7 +21,7 @@ lat_lon = [float(header.split(', ')[i].split(' ')[1]) for i in [0, 1]]
 lat0, lon0 = lat_lon[0], lat_lon[1]
 ```
 
-#### 2. Set your current local position
+#### **Rubric 2:** Set your current local position
 I set the home position to the latitude and longitude found in the previous step - 
 in addition I set the current local position relative to the global position:
 
@@ -30,7 +30,7 @@ self.set_home_position(lon0, lat0, 0)
 curr_local_pos = global_to_local(self.global_position, self.global_home)
 ```
 
-#### 3. Set grid start position from local position
+#### **Rubric 3:** Set grid start position from local position
 I set the grid start position using:
 
 ```python
@@ -40,7 +40,7 @@ start = (int(curr_local_pos[0] - north_offset),
 
 This also accounts for the north/east offsets on the map.
 
-#### 4. Set grid goal position from geodetic coords
+#### **Rubric 4:** Set grid goal position from geodetic coords
 The grid goal position is set using:
 
 ```python
@@ -49,7 +49,7 @@ grid_goal = (int(grid_goal[0] - north_offset),
              int(grid_goal[1] - east_offset))
 ```
 
-#### 5. Modify A* to include diagonal motion (or replace A* altogether)
+#### **Rubric 5:** Modify A* to include diagonal motion (or replace A* altogether)
 I added four additional actions:
 
 ```python
@@ -72,7 +72,7 @@ if (x - 1 < 0 and y - 1 < 0) or grid[x - 1, y - 1] == 1:
     valid_actions.remove(Action.NORTHWEST)
 ```
 
-#### 6. Cull waypoints 
+#### **Rubric 6:** Cull waypoints 
 In order to cull the waypoints I use a collinearity check:
 
 ```python
